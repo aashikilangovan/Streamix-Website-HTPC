@@ -1,0 +1,190 @@
+.responsive-width {
+    width: 100%;
+}
+@media (min-width: 640px) {
+    .responsive-width {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .responsive-width {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1024px) {
+    .responsive-width {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    .responsive-width {
+        max-width: 1280px;
+    }
+}
+@media (min-width: 1536px) {
+    .responsive-width {
+        max-width: 1536px;
+    }
+}
+@media (min-width: 1792px) {
+    .responsive-width {
+        max-width: 1792px;
+    }
+}
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/listwallpaper.png');
+    background-size: 200px;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    background-color: #111827;
+}
+
+header {
+    background: #4b4b4b;
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.content-container {
+    background: #4b4b4b;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-position: center;
+    border-radius: 5rem;
+    text-align: center;
+    padding-bottom: 5rem;
+    margin-left: 4rem;
+    margin: 3rem;
+    border-color: rgb(31, 91, 255);
+    border-width: 3px;
+    width: 90%
+}
+
+li {
+    text-align:left;
+}
+
+.content-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.content {
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.content img {
+    width: 5rem;
+    height: 9rem;
+    margin-right: 10px;
+    
+}
+
+.watchlist {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #337f99;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-repeat: repeat;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.watchlist h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.watchlist-items {
+    list-style: none;
+    padding: 0;
+}
+
+.watchlist li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgb(69, 94, 94);
+    border-radius: 10px;
+    border-color: rgb(95, 236, 236);
+    border-width: 2px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    
+}
+
+.watchlist li img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.title-info {
+    flex: 1; 
+}
+
+.title-info h2 {
+    font-size: 18px;
+}
+
+.title-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.delete-button {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+.add-to-list {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.newItem {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #303030;
+    
+}
+
+.addButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #0056b3;
+}
+
+

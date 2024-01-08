@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/home_page.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+        <div>
+            <a class="px-4 py-3 active" href="./home_page.html">Movies & TV</a>
+            <a class="px-4 py-3" href="./music_page.html">Music</a>
+            <a class="px-4 py-3" href="./video_page.html">Videos</a>
+        </div>
+        <div class="flex items-end">
+            <a href="./search_page.html">
+                <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+            </a>
+            <div class="user-profile relative">
+                <div class="overlay absolute top-full left-[-4.8rem] w-50">
+                    <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+                    <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+                    <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl clear">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+</header>
+    <section class="content-container">
+        <h1 class="text-4xl py-5 content-title">Recommended Movies & Shows For You</h1>
+        <div class="content">
+            <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
+            <a href="movie_description_page.html" id="spiderman">
+                <img src="../images/Spider-Man.jpeg" alt="Movie 1">
+            </a>
+            <a href="movie_description_page.html" id="guardians">
+                <img src="../images/Guardians_of_the_Galaxy_Vol._3_poster.jpg" alt="Movie 2">
+            </a>
+            <a>
+                <img src="../images/Super%20Mario%20Bros%20Movie.jpg" alt="Movie 4" id="mario">
+            </a>
+            <div class="arrow right-arrow" id="right-arrow1">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container">
+        <h1 class="text-4xl py-5 content-title">Trending Movies & Shows For Everyone</h1>
+        <div class="content">
+            <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
+            <a href = "tvshow_description_page.html" id ="wednesday">
+                <img src="../images/wednesdayposter.jpg" alt="Movie 2">
+            </a>
+            <img src="../images/Avatar%202.jpg" alt="Movie 3" id="avatar">
+            <img src="../images/The%20Little%20Mermaid.jpg" alt="Movie 4" id="mermaid">
+            <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container">
+        <h1 class="text-4xl py-5 content-title">Highest Rated Movies & TV shows</h1>
+        <div class="content space-x-1">
+            <div class="arrow left-arrow" id="left-arrow3">&#9664;</div>
+            <img src="../images/3.jpeg" alt="Movie 1" id="dinosaur">
+            <img src="../images/2.jpg" alt="Movie 3" id="sourcing">
+            <img src="../images/ant%20man%20and%20the%20wasp.jpg" alt="Movie 4" id="antman">
+            <div class="arrow right-arrow" id="right-arrow3">&#9654;</div>
+        </div>
+    </section>
+    <script src="../scripts/home_page.js"></script>
+</body>
+</html>

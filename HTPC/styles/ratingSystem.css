@@ -1,0 +1,46 @@
+/* The following code is modified from: -------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+
+.rating-container {
+    text-align: center;
+}
+
+.rating-stars {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.star {
+    color: #ccc;
+}
+
+.star.active {
+    color: #ffcc00;
+}
+
+.avg-rating {
+    display: flex;
+}
+
+.avg-rating .star {
+    color: #ffcc00;
+    font-size: 2rem;
+}
+.avg-rating .starSearch {
+    font-size: 2rem;
+}
+
+.user-star {
+    color: #ccc;
+}
+
+.user-star.active {
+    color: #ffcc00;
+}
+
+.banner-container img {
+    max-width: 80vw;
+    height: 500px;
+    margin: 0 auto; 
+    
+}

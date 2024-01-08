@@ -1,0 +1,128 @@
+.responsive-width {
+    width: 100%;
+}
+@media (min-width: 640px) {
+    .responsive-width {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .responsive-width {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1024px) {
+    .responsive-width {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    .responsive-width {
+        max-width: 1280px;
+    }
+}
+@media (min-width: 1536px) {
+    .responsive-width {
+        max-width: 1536px;
+    }
+}
+@media (min-width: 1792px) {
+    .responsive-width {
+        max-width: 1792px;
+    }
+}
+
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111827;
+    background-image: url('../images/tvred.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 200px;
+}
+
+header {
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.content-container {
+    background: #444444;
+    background-color: #632828;
+    border-radius: 5rem;
+    background-image: url('../images/redcontainer.png');
+    background-size: 1350px;
+    background-position: center;
+    background-repeat: repeat;
+    text-align: center;
+    padding-bottom: 5rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-color:#ff3c3c;
+    border-width: 3px;
+    
+
+    width: 90%;
+}
+
+.content-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.content {
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: row;
+    z-index: 0;
+}
+
+.content img {
+    width: 21rem;
+    height: 13rem;
+    margin-right: 4rem;
+    border: 5px solid white;
+}
+
+.arrow {
+    position: absolute;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem;
+    background: white;
+    color: white;
+    z-index: 0;
+}
+
+.left-arrow {
+    left: 0;
+    background: #7c1515;
+    z-index: 0;
+}
+
+.right-arrow {
+    right: 0;
+    background:  #7c1515;
+    z-index: 0;
+}
+
+.right-arrow:hover{
+    background: #ff2b2b;
+    z-index: 0;
+}
+
+.left-arrow:hover{
+    background: #ff2b2b;
+    z-index: 0;
+}

@@ -1,0 +1,135 @@
+header{
+    position: -webkit-sticky; /* first two lines make navbar stay in same position while scrolling across different browsers */
+    position: sticky;
+    top: 0; /* stick to top of viewport */
+    z-index: 1000;
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
+
+    background-image: url('../images/greencontainer.jpg');
+    background-size: 1500px;
+    background-position: center;
+}
+
+/* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */
+.flex-navbar{
+    display: flex; /* use flexbox for responsive navbar */
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* mobile first approach, organize flex items by row if on larger screen */
+@media (min-width: 768px) {
+    .flex-navbar {
+        flex-direction: row;
+    }
+}
+
+.navbar-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1rem;
+    margin-left: 1.75rem;
+}
+
+a:hover {
+    color: #2be3b5;
+}
+
+.flex-navbar a.active {
+    color: #2be3b5;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-text {
+        margin-bottom: 0; /* Override margin for larger screens, equivalent to md:mb-0 */
+    }
+}
+
+.flex-nav-items {
+    font-size: 1.25rem; /* Equivalent to md:text-xl in Tailwind CSS */
+    margin-right: auto; /* Equivalent to md:mr-auto in Tailwind CSS */
+    margin-left: 1rem; /* Equivalent to md:ml-4 in Tailwind CSS */
+    padding-top: 0.6rem; /* Equivalent to md:py-1 in Tailwind CSS */
+    padding-left: 1rem; /* Equivalent to md:pl-4 in Tailwind CSS */
+}
+
+@media (min-width: 768px) {
+    .flex-nav-items {
+        font-size: 1.5rem; /* Adjust font size for larger screens */
+        align-items: end;
+    }
+}
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the user profile container */
+.user-profile {
+    position: relative;
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+.search-icon i{
+    font-size: 100rem;
+}
+.user-profile i {
+    font-size: 4rem;
+    border-radius: 50%;
+    margin-right: 3rem;
+}
+
+/* Style the overlay */
+.overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200%;
+    background-color: #333;
+    color: #fff;
+    border-radius: 2rem;
+    display: none;
+    z-index: 20;
+}
+
+.overlay a:hover {
+    color: #2be3b5;
+}
+
+/* Style the overlay links */
+.overlay a {
+    display: block;
+    margin-right: 0.8rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    text-wrap: normal;
+}
+
+/* Show the overlay on hover */
+.user-profile:hover .overlay {
+    display: block;
+}
+
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .user-icon {
+        font-size: 30px; /* Adjust the font size for smaller screens */
+    }
+
+    .overlay {
+        right: 0; /* Adjust the positioning for smaller screens */
+        width: auto; /* Let the overlay size itself based on content */
+    }
+}

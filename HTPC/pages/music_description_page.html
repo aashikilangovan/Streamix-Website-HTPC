@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/musicnav_bar.css">
+    <link rel="stylesheet" href="../styles/ratingSystem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+        body {
+            background-image: url('../images/notesdarkgreen.png');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 200px;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .spotify-player {
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .poster {
+            width: 20rem;
+            height: 20rem;
+        }
+
+        .first-container {
+            background: #444444;
+            background-color: #244e43;
+            background-image: url('../images/greencontainer.jpg');
+            background-size: 1080px;
+            background-position: center;
+            border-radius: 5rem;
+            text-align: center;
+            padding-bottom: 3rem;
+            margin-left: 3rem;
+            border-color: #3cffe8;
+            border-width: 3px;
+        }
+
+        .second-container
+        {
+            position: relative;
+            background: #444444;
+            background-color: #244e43;
+            background-image: url('../images/greencontainer.jpg');
+            background-size: 1080px;
+            background-position: center;
+            border-radius: 5rem;
+            text-align: center;
+            padding-bottom: 3rem;
+            margin-left: 2rem;
+            margin-right: 1rem;
+            border-color: #3cffe8;
+            border-width: 3px;
+            width: 120%;
+        }
+        .songs {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-70%, -50%);
+        }
+        .third-container {
+            background: #444444;
+            background-color: #244e43;
+            background-image: url('../images/greencontainer.jpg');
+            background-size: 1080px;
+            background-position: center;
+            border-radius: 5rem;
+            text-align: center;
+            padding-bottom: 3rem;
+            margin-left: 10rem;
+            border-color: #3cffe8;
+            border-width: 3px;
+            width: 60%;
+        }
+
+        .content-img {
+            margin-top: 2rem;
+            border: 3px solid #ffffff;
+        }
+/* ------------------------------------------------------------------------------------------------------------
+    </style>
+</head>
+<header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+        <div>
+            <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
+            <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
+            <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
+        </div>
+        <div class="flex items-end">
+            <a href="./search_page.html">
+                <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+            </a>
+            <div class="user-profile relative">
+                <div class="overlay left-[-4.8rem]">
+                    <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+                    <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+                    <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl clear">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+</header>
+<body class="bg-slate-900">
+    <div class="spotify-player">
+        <iframe style="border-radius:12px" id="MJ" class="hidden"
+            src="https://open.spotify.com/embed/track/2LlQb7Uoj1kKyGhlkBf9aC?utm_source=generator&theme=0" width="100%"
+            height="250" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" id="MGK" class="hidden"
+            src="https://open.spotify.com/embed/track/4kDgnKgZTX6puRz9EoNjle?utm_source=generator" width="100%"
+            height="250" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="grid grid-cols-3 py-10">
+        <section class="first-container">
+            <div>
+                <div class="flex flex-row justify-center">
+                    <section class="content-img">
+                        <img src="" class="image poster" alt="media content" id="album image">
+                    </section>
+                </div>
+                <div class="flex flex-col items-start mt-3 ml-20 text-lg">
+                    <div>
+                        <strong class="mr-2">Album:</strong>
+                        <span class="title"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Artist:</strong>
+                        <span class="artist"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Release Date:</strong>
+                        <span class="year"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Genre:</strong>
+                        <span class="genre"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Duration:</strong>
+                        <span class="duration"></span>
+                    </div>
+                </div>
+<!--------------------------------------------------------------------------------------------------------------
+The following code is modified from:
+                /* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */ ------------------->
+                <div class="avg-rating space-x-2 items-center justify-center">
+                    <div class="star" id="star1">&#9733;</div>
+                    <div class="star" id="star2">&#9733;</div>
+                    <div class="star" id="star3">&#9733;</div>
+                    <div class="star" id="star4">&#9733;</div>
+                    <div class="star" id="star5">&#9733;</div>
+                </div>
+<!---------------------------------------------------------------------------------------------------------------->
+                <p class="totalRatings text-center"></p>
+            </div>
+        </section>
+
+        <section class="second-container">
+            <div class="text-left text-lg songs whitespace-nowrap ml-20"></div>
+        </section>
+        
+
+        <section class="third-container">
+            <div class="flex flex-col items-center py-3">
+                <div class="rating-container">
+                    <p>Your Rating:</p>
+                    <div class="rating-stars" id="stars">
+                        <span class="user-star" data-value="1">&#9733;</span>
+                        <span class="user-star" data-value="2">&#9733;</span>
+                        <span class="user-star" data-value="3">&#9733;</span>
+                        <span class="user-star" data-value="4">&#9733;</span>
+                        <span class="user-star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+ <!--------- code is modified from: https://getbootstrap.com/docs/4.1/components/dropdowns/ ------------------>
+                <div class="btn-group py-3">
+                    <button class="btn btn-primary btn-md addListItem" type="button">+ Playlist</button>
+                    <button type="button" class="btn btn-md btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="visually-hidden list-type">Choose List</span>
+                    </button>
+                    <div class="dropdown-menu"></div>
+                </div>
+<!--------------------------------------------------------------------------------------------------------------->
+                <p class="text-center mt-3 py-3">Listen with Subscribed Apps:</p>
+                <div id="subscribed-apps" class="flex flex-row items-center justify-center space-x-4"></div>
+                <p class="text-center py-3">Unsubscribed Apps</p>
+                <div id="unsubscribed-apps" class="flex flex-row items-center justify-center space-x-4"></div>
+            </div>
+        </section>
+    </div>
+        <script src="../scripts/music_description_page.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            const subscribedApps = document.getElementById('subscribed-apps');
+            const unsubscribedApps = document.getElementById('unsubscribed-apps');
+            let allData = JSON.parse(localStorage.getItem('data'));
+            const storedId2 = localStorage.getItem('id2');
+            const id2 = parseInt(storedId2, 10);
+            let allLists = JSON.parse(localStorage.getItem('lists'));
+            console.log(allData);
+            console.log(id2);
+            console.log(allData[id2].title);
+            console.log(allData);
+            console.log(allLists);
+            if (allLists) {
+                for (let i = 0; i < allLists.length; i++) {
+                    let listDropdown = document.querySelector('.dropdown-menu');
+                    listDropdown.innerHTML += `
+            <div class="dropdown-item" onClick="handleItemClick('${allLists[i].title}')">${allLists[i].title}</div>
+            `;
+                    document.querySelector('.list-type').textContent = allLists[i].title;
+                }
+            }
+            let container = document.querySelector('.songs');
+            let div = document.createElement('div');
+            let songs = allData[id2].songs;
+            div.innerHTML = `<h2 style="font-size: 1.1em;"><u><strong>${allData[id2].title}: Song List </strong></u></h2><br>`;
+            div.innerHTML += `<ol>`;
+            for (let i = 0; i < songs.length; i++) {
+                div.innerHTML += `<li style="font-size: 0.9em;"><u><i>${songs[i]}</i></u></li>`;
+            }
+            div.innerHTML += `</ol>`;
+            div.classList.add('list-decimal');
+            container.appendChild(div);
+    
+            document.querySelector('.title').textContent = allData[id2].title;
+            document.querySelector('.image').src = allData[id2].src;
+            document.querySelector('.artist').textContent = allData[id2].artist;
+            document.querySelector('.genre').textContent = allData[id2].genre;
+            document.querySelector('.year').textContent = allData[id2].year;
+            document.querySelector('.duration').textContent = allData[id2].duration;
+            document.querySelector('.totalRatings').innerHTML = "<strong>( " + allData[id2].totalUserRatings + " ratings )</strong>";
+            allData[id2].subscribed.forEach(addSubscribedApps)
+            allData[id2].unsubscribed.forEach(addUnsubscribedApps)
+            renderStars();
+/* The following code is modified from: ------------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+            const stars = document.querySelectorAll('.user-star');
+            if (allData[id2].userRating !== "") {
+                handleStars(allData[id2].userRating);
+            }
+    
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    const value = this.getAttribute('data-value');
+                    handleStars(value);
+                    updateRating(value);
+                });
+    
+                star.addEventListener('mouseover', function () {
+                    const value = this.getAttribute('data-value');
+                    handleStars(value);
+                });
+    
+                star.addEventListener('mouseout', function () {
+                    handleStars(allData[id2].userRating);
+                });
+            });
+/* --------------------------------------------------------------------------------------------------------- */
+            function updateRating(currentRating) {
+                let totalStars = parseInt(allData[id2].totalStars);
+                let totalUserRatings = parseInt(allData[id2].totalUserRatings);
+    
+                if (allData[id2].userRating === "") {
+                    totalUserRatings = totalUserRatings + 1;
+                    totalStars += parseInt(currentRating);
+                    allData[id2].userRating = currentRating;
+                } else {
+                    totalStars -= allData[id2].userRating;
+                    totalStars += parseInt(currentRating);
+                    allData[id2].userRating = currentRating;
+                }
+    
+                const averageRating = Math.round(totalStars / totalUserRatings);
+                allData[id2].totalStars = totalStars.toString();
+                allData[id2].totalUserRatings = totalUserRatings.toString();
+                console.log("r", allData[id2].totalUserRatings)
+                allData[id2].avgRating = averageRating.toString();
+                console.log(allData[id2].avgRating);
+                allData[id2].userRating = currentRating;
+                localStorage.setItem('data', JSON.stringify(allData));
+                document.querySelector('.totalRatings').textContent = "( " + allData[id2].totalUserRatings + " ratings" + " )";
+                renderStars();
+            }
+/* The following code is modified from: ------------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+            function handleStars(value) {
+                stars.forEach(star => {
+                    if (star.getAttribute('data-value') <= value) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+/* --------------------------------------------------------------------------------------------------------- */
+            function renderStars() {
+                console.log(allData[id2].avgRating);
+                if (allData[id2].avgRating === "1") {
+                    document.querySelector('#star1').style.color = '#ffcc00';
+                    document.querySelector('#star2').style.color = '#ccc';
+                    document.querySelector('#star3').style.color = '#ccc';
+                    document.querySelector('#star4').style.color = '#ccc';
+                    document.querySelector('#star5').style.color = '#ccc';
+                } else if (allData[id2].avgRating === "2") {
+                    document.querySelector('#star1').style.color = '#ffcc00';
+                    document.querySelector('#star2').style.color = '#ffcc00';
+                    document.querySelector('#star3').style.color = '#ccc';
+                    document.querySelector('#star4').style.color = '#ccc';
+                    document.querySelector('#star5').style.color = '#ccc';
+                } else if (allData[id2].avgRating === "3") {
+                    document.querySelector('#star1').style.color = '#ffcc00';
+                    document.querySelector('#star2').style.color = '#ffcc00';
+                    document.querySelector('#star3').style.color = '#ffcc00';
+                    document.querySelector('#star4').style.color = '#ccc';
+                    document.querySelector('#star5').style.color = '#ccc';
+                } else if (allData[id2].avgRating === "4") {
+                    document.querySelector('#star1').style.color = '#ffcc00';
+                    document.querySelector('#star2').style.color = '#ffcc00';
+                    document.querySelector('#star3').style.color = '#ffcc00';
+                    document.querySelector('#star4').style.color = '#ffcc00';
+                    document.querySelector('#star5').style.color = '#ccc';
+                } else if (allData[id2].avgRating === "5") {
+                    document.querySelector('#star1').style.color = '#ffcc00';
+                    document.querySelector('#star2').style.color = '#ffcc00';
+                    document.querySelector('#star3').style.color = '#ffcc00';
+                    document.querySelector('#star4').style.color = '#ffcc00';
+                    document.querySelector('#star5').style.color = '#ffcc00';
+                }
+            }
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
+            function addSubscribedApps(src) {
+                const imageElement = document.createElement('img');
+                imageElement.src = src;
+                imageElement.alt = 'subscribedApp';
+                if (src === "../images/applemusic.png")
+                {
+                    imageElement.style.width = "5.3em";
+                    imageElement.style.height = "5.3em";
+                }
+                else
+                {
+                    imageElement.style.width = "4.3em";
+                    imageElement.style.height = "4.3em";
+                }
+                imageElement.style.cursor = "pointer";
+                imageElement.addEventListener('click', function () {
+                    console.log("spotify", allData[id2].title);
+                    if (allData[id2].title === "Thriller")
+                        document.querySelector('#MJ').classList.remove('hidden');
+                    else if (allData[id2].title === "Tickets to My Downfall")
+                        document.querySelector('#MGK').classList.remove('hidden');
+                });
+                subscribedApps.appendChild(imageElement);
+            }
+    
+            function addUnsubscribedApps(src) {
+                const imageElement = document.createElement('img');
+                imageElement.src = src;
+                imageElement.alt = 'unsubscribedApp';
+                if (src === "../images/applemusic.png")
+                {
+                    imageElement.style.width = "5.3em";
+                    imageElement.style.height = "5.3em";
+                }
+                else
+                {
+                    imageElement.style.width = "4.3em";
+                    imageElement.style.height = "4.3em";
+                }
+                imageElement.style.cursor = "pointer";
+                imageElement.addEventListener('click', function () {
+                    window.location.href = "subscriptions_page_final.html";
+                });
+                unsubscribedApps.appendChild(imageElement);
+            }
+ // -----------------------------------------------------------------------------------------------------------------
+            function handleItemClick(item) {
+                document.querySelector('.list-type').textContent = item;
+            }
+    
+            let content = document.querySelector('.addListItem');
+            content.addEventListener('click', function () {
+                let originalColor = content.style.backgroundColor;
+                let originalText = content.innerText;
+                for (let i = 0; i < allLists.length; i++) {
+                    let itemExists = allLists[i].listItems.findIndex(item => item.title === allData[id2].title);
+                    if (allLists[i].media === "Music Albums" && document.querySelector('.list-type').textContent === allLists[i].title) {
+                        if (itemExists === -1) {
+                            content.innerText = "Success!";
+                            content.style.backgroundColor = "#28a745";
+                            setTimeout(function () {
+                                content.style.backgroundColor = originalColor;
+                                content.innerText = originalText;
+                            }, 2000);
+                            allLists[i].listItems.push(allData[id2]);
+                            localStorage.setItem('lists', JSON.stringify(allLists));
+                        }
+                        else {
+                            content.innerText = "Media Already Exists!";
+                            content.style.backgroundColor = "#dc3545";
+                            setTimeout(function () {
+                                content.style.backgroundColor = originalColor;
+                                content.innerText = originalText;
+                            }, 2000);
+                        }
+                        break;
+                    }
+                    else if (allLists[i].media !== "Music Albums" && document.querySelector('.list-type').textContent === allLists[i].title) {
+                        content.innerText = "Wrong List Type!";
+                        content.style.backgroundColor = "#dc3545";
+                        setTimeout(function () {
+                            content.style.backgroundColor = originalColor;
+                            content.innerText = originalText;
+                        }, 2000);
+                    }
+                    else { }
+                }
+                console.log(allLists);
+            });
+        </script>
+</body>
+
+</html>

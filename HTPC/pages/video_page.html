@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/video_page.css">
+    <link rel="stylesheet" href="../styles/videonav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+        <div>
+            <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+            <a class="px-4 py-3" href="./music_page.html">Music</a>
+            <a class="px-4 py-3 active" href="./video_page.html">Videos</a>
+        </div>
+        <div class="flex items-end">
+            <a href="./search_page.html">
+                <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+            </a>
+            <div class="user-profile relative">
+                <div class="overlay absolute top-full left-[-4.8rem] w-50">
+                    <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+                    <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+                    <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl clear">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+</header>
+<section class="content-container">
+        <h1 class="text-4xl py-5 content-title">Trending Videos</h1>
+        <div class="content space-x-1">
+            <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
+            <img src="../images/messi.jpg" alt="Videos 1" id="messi">
+            <img src="../images/fortnite.jpg" alt="Videos 2" id="fortnite">
+            <img src="../images/fivenights.jpg" alt="Videos 3" id="fivenights">
+            <div class="arrow right-arrow" id="right-arrow1">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container responsive-width">
+        <h1 class="text-4xl py-5 content-title">Current Live Streams</h1>
+        <div class="content space-x-1">
+            <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
+            <img src="../images/pewdthumbnail.png" alt="Videos 5" id="pew">
+            <img src="../images/cricketstream.png" alt="Videos 6" id="cricket">
+            <img src="../images/lofigirl.png" alt="Videos 7" id="lofi">
+            <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container responsive-width">
+        <h1 class="text-4xl py-5 content-title">Videos Watch Later List</h1>
+        <div class="content space-x-1">
+            <div class="arrow left-arrow" id="left-arrow3">&#9664;</div>
+            <img src="../images/impaulsive.jpg" alt="Videos 9" id="impaulsive">
+            <img src="../images/tips.jpg" alt="Videos 10" id="tips">
+            <img src="../images/coc.jpg" alt="Videos 11" id="clash">
+            <div class="arrow right-arrow" id="right-arrow3">&#9654;</div>
+        </div>
+    </section>
+    <script src="../scripts/video_page.js"></script>
+</body>
+</html>

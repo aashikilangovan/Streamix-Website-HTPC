@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../styles/nav_bar.css">
+  <link rel="stylesheet" href="../styles/ratingSystem.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Media Search Page</title>
+  <style>
+/* Some of the following code is from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('../images/searchwallpaper.png');
+      background-repeat: repeat;
+      background-size: 200px;
+    }
+
+    .container {
+    background: #4b4b4b;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-position: center;
+    border-radius: 5rem;
+    border-color: rgb(31, 91, 255);
+    border-width: 3px;
+    width: 90%
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #f4f6f8;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result-container {
+      display: flex;
+      justify-content: flex-start;
+      color: white;
+      background-image: url('../images/ratingscontainer.png');
+            background-size: 1700px;
+            background-position-y: 80%;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      width: 100%; 
+      border-radius: 10px;
+      border-color: rgb(95, 236, 236);
+      border-width: 3px;
+    }
+
+    .result-item {
+      flex: 1;
+    }
+
+    .result-item h5 {
+      color: #fbfbfb;
+            font-weight: bold;
+    }
+
+    /* Subscription sections */
+    .subscription-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .subscription-section img {
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      border-radius: 4px;
+      border-color: #f8f9fa;
+      border-width: 3px;
+      transition: transform 0.2s;
+    }
+
+    .subscription-section img:hover {
+      transform: scale(1.1);
+    }
+
+    .subscribed-apps,
+    .unsubscribed-apps {
+      display: flex;
+      align-items: center;
+    }
+
+  .spotify-player {
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 12px;
+  }
+/* ---------------------------------------------------------------------------------------------------------------- */
+  </style>
+</head>
+<body class="bg-slate-900">
+<header class="bg-slate-900">
+  <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+    <div>
+      <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
+      <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
+      <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
+    </div>
+    <div class="flex items-end">
+      <a href="./search_page.html">
+        <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+      </a>
+      <div class="user-profile relative py-2">
+        <div class="overlay left-[-4.8rem]">
+          <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+          <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+          <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+          <a href="#" class="settings-link text-xl">Account & Settings</a>
+          <a href="#" class="settings-link text-xl">Logout</a>
+        </div>
+        <i class="fa fa-user-circle-o user-profile"></i>
+      </div>
+    </div>
+  </div>
+  <br>
+</header>
+<div class="spotify-player">
+  <iframe style="border-radius:12px" id="MJ" class="hidden"
+          src="https://open.spotify.com/embed/track/2LlQb7Uoj1kKyGhlkBf9aC?utm_source=generator&theme=0" width="100%"
+          height="250" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe style="border-radius:12px" id="MGK" class="hidden"
+          src="https://open.spotify.com/embed/track/4kDgnKgZTX6puRz9EoNjle?utm_source=generator" width="100%"
+          height="250" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<!-- Most of the following code is from: ----------------------------------------------------------------------------- */
+ OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+-->
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <br>
+      <h2 class="text-white mb-4 font-weight-bold" style="font-size: 2em;">Search for Media Content 🔎</h2>
+      <div class="form-group">
+        <p id="errorMessage" style="color:white;padding-top: 10px;"> Please select a media type or type a content title before clicking the search button </p>
+        <br>
+        <label for="mediaType">Select Media Type</label>
+        <select id="mediaType" class="form-control genreChange">
+          <option value="">-- Select Media Type --</option>
+          <option value="Movie">Movies</option>
+          <option value="TV">TV</option>
+          <option value="Music">Music</option>
+          <option value="Video">Videos</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="genreDropdown" style="display: none;">
+        <label for="genre">Select Genre</label>
+        <select id="genre" class="form-control">
+          <option value="">-- Select Genre --</option>
+          <!-- Genres will be dynamically populated based on the selected media type -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Select Rating</label>
+        <select id="rating" class="form-control">
+          <option value="">-- Select Rating --</option>
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3">3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="searchBar">Search</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchBar" placeholder="Enter your search">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" id="searchClick">Search</button>
+          </div>
+        </div>
+      </div>
+      <div id="resultsContainer">
+        <!-- Results will be dynamically populated here -->
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../scripts/search_page.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/subpagewallpaper.png');
+    background-size: 500px;
+    background-repeat: repeat;
+    text-align: center;
+    background-color: #111827;
+}
+
+.subscription {
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+
+}
+
+.manage_subscriptions{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: white;
+}
+
+.card{
+    padding-bottom: 2%;
+    background-color: #E4E6EE;
+    background-image: url('../images/subcontainerimage.png');
+    background-size: 1000px;
+    background-position-x: 70%;
+    background-position-y: 78%;
+    border: 5px;
+    border-color: rgb(255, 255, 255);;
+    border-radius: 10px;
+}
+
+/* #E4E6EE is the original light gray color */
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+.card-body {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.horizontal_line {
+    position: relative;
+    height: 2px;
+    background: black;
+
+}
+
+/* this secion of code has some parts adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+
+/* Dropdown Button */
+.subscribeButtonDisney, .subscribeButtonNetflix, .subscribeButtonPrime, .subscribeButtonSpotify, .subscribeButtonApple, .subscribeButtonSoundCloud,
+.subscribeButtonTwitch, .subscribeButtonYoutube, .subscribeButtonKick {
+    background-color: #04AA6D;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  
+  
+  /* Dropdown button on hover & focus */
+  .subscribeButtonDisney:hover, .subscribeButtonDisney:focus, .subscribeButtonNetflix:focus, .subscribeButtonNetflix:hover, 
+  .subscribeButtonPrime:focus, .subscribeButtonPrime:hover, .subscribeButtonSpotify:focus, .subscribeButtonSpotify:hover ,
+  .subscribeButtonApple:focus, .subscribeButtonApple:hover .subscribeButtonSoundCloud:focus, .subscribeButtonSoundCloud:hover,
+  .subscribeButtonTwitch:focus, .subscribeButtonTwitch:hover,  .subscribeButtonYoutube:focus, .subscribeButtonYoutube:hover,
+  .subscribeButtonKick:focus, .subscribeButtonKick:hover
+
+  {
+    background-color: rgb(15, 144, 62);
+  }
+
+  .dropdown {
+    position:relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content, .dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5, .dropdown-content6, .dropdown-content7, .dropdown-content8{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content text, .dropdown-content1 text, .dropdown-content2 text, .dropdown-content3 text, .dropdown-content4 text, .dropdown-content5 text 
+  ,.dropdown-content6 text, .dropdown-content7 text, .dropdown-content8 text{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+.dropdown-content text:hover, .dropdown-content1 text:hover, .dropdown-content2 text:hover, .dropdown-content3 text:hover, .dropdown-content4 text:hover,
+.dropdown-content5 text:hover, .dropdown-content6 text:hover, .dropdown-content7 text:hover, .dropdown-content8 text:hover
+
+{background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.unsubscribeButtonNetflix, .unsubscribeButtonDisney, .unsubscribeButtonPrime, .unsubscribeButtonSpotify, .unsubscribeButtonApple, .unsubscribeButtonSoundCloud,
+.unsubscribeButtonTwitch, .unsubscribeButtonYoutube, .unsubscribeButtonKick {
+    margin-top: 22px;
+    background-color: rgb(222, 52, 52);
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: rgb(222, 52, 52);
+    color:white;  
+}
+
+.unsubscribeButtonNetflix:hover, .unsubscribeButtonDisney:hover, .unsubscribeButtonPrime:hover, .unsubscribeButtonSpotify:hover, .unsubscribeButtonApple:hover, 
+.unsubscribeButtonSoundCloud:hover, .unsubscribeButtonTwitch:hover, .unsubscribeButtonTwitch:hover, .unsubscribeButtonKick:hover {
+    color: white;
+    background-color: rgb(197, 17, 17)
+}

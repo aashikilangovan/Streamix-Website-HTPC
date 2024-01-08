@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/subscriptions.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+        <div>
+            <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
+            <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
+            <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
+        </div>
+        <div class="flex items-end">
+            <a href="./search_page.html">
+                <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+            </a>
+            <div class="user-profile relative py-2">
+                <div class="overlay left-[-4.8rem]">
+                    <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+                    <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+                    <a href="./subscriptions_page_final.html" class="subscription-link text-xl active">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+</header>
+<body>
+    <h1 class = "manage_subscriptions" body color="#111827">Manage Your Subscriptions</h1>
+        <div class = 'flex-container'>
+    <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "netflix-header">
+                  </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/netflix.png" alt="Netflix">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Netflix</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonNetflix" onclick="subscribeOnClick('netflix')">Edit Plan</button>
+                        <div id="myDropdownNetflix" class="dropdown-content">
+                            <text id = "netflix6"  onclick = "dropdownNetflix('$6/month')">$6/month</text>
+                            <text id = "netflix17" onclick = "dropdownNetflix('$17/month')">$17/month</text>
+                            <text id = "netflix21" onclick = "dropdownNetflix('$21/month')">$21/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonNetflix" onclick = "unsubConfirm('netflix')" id ="subscribe-btn-Netflix" >Unsubscribe</button> <!--  Netflix is subscribed to already, don't hide-->
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "prime-header">
+                  </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/amazonicon.png" alt="Prime Video">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Prime Video</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonPrime" onclick="subscribeOnClick('prime')" id ="subscribe-btn-Prime">Subscribe </button>
+                        <div id="myDropdownPrime" class="dropdown-content1">
+                            <text id = "prime7" onclick = "dropdownPrime('$7/month')">$7/month</text>
+                            <text id = "prime15" onclick = "dropdownPrime('$15/month')">$15/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonPrime" onclick = "unsubConfirm('prime')" hidden >Unsubscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id ="disney-header">
+                  </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/disneyplus.png" alt="DisneyPlus">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Disney Plus</h5>
+                    <hr class = 'horizontal_line'>
+                        <div class = "dropdown">
+                            <button class="subscribeButtonDisney" onclick="subscribeOnClick('disney+')" id ="subscribe-btn-Disney">Subscribe </button>
+                            <div id="myDropdownDisney" class="dropdown-content2">
+                                <text id = "disney8" onclick = "dropdownDisney('$8/month')">$8/month</text>
+                                <text id = "disney12" onclick = "dropdownDisney('$12/month')">$12/month</text>
+                                <text id = "disney15" onclick = "dropdownDisney('$15/month')">$15/month</text>
+                            </div>
+                        </div>
+                        <div class = "cancel">
+                            <button class = "unsubscribeButtonDisney" onclick = "unsubConfirm('disney+')" hidden >Unsubscribe</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class = 'flex-container'>
+            <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "spotify-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/spotify.webp" alt="Spotify">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Spotify</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonSpotify" onclick="subscribeOnClick('spotify')" id ="subscribe-btn-Spotify">Edit Plan</button>
+                        <div id="myDropdownSpotify" class="dropdown-content3">
+                            <text id = "spotify6"  onclick = "dropdownSpotify('$6/month')">$6/month</text>
+                            <text id = "spotify11" onclick = "dropdownSpotify('$11/month')">$11/month</text>
+                            <text id = "spotify15" onclick = "dropdownSpotify('$15/month')">$15/month</text>
+                            <text id = "spotify17" onclick = "dropdownSpotify('$17/month')">$17/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonSpotify" onclick = "unsubConfirm('spotify')" >Unsubscribe</button> <!--  Spotify is subscribed to already, don't hide-->
+                    </div>
+            </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "apple-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/applemusic.png" alt="appletv">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Apple Music</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonApple" onclick="subscribeOnClick('apple')" id ="subscribe-btn-Apple">Edit Plan</button>
+                        <div id="myDropdownApple" class="dropdown-content4">
+                            <text id = "apple6"  onclick = "dropdownApple('$6/month')">$6/month</text>
+                            <text id = "apple11" onclick = "dropdownApple('$11/month')">$11/month</text>
+                            <text id = "apple17" onclick = "dropdownApple('$17/month')">$17/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonApple" onclick = "unsubConfirm('apple')" >Unsubscribe</button> <!--  Apple is subscribed to already, don't hide-->
+                    </div>
+            </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "soundcloud-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/soundcloud.png" alt="SoundCloud" id > <!--ADD IDS FOR LATER-->
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">SoundCloud</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonSoundCloud" onclick="subscribeOnClick('soundcloud')" id ="subscribe-btn-SoundCloud">Subscribe</button>
+                        <div id="myDropdownSoundCloud" class="dropdown-content5">
+                            <text id = "soundcloud5"  onclick = "dropdownSoundCloud('$5/month')">$5/month</text>
+                            <text id = "soundcloud10" onclick = "dropdownSoundCloud('$10/month')">$10/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonSoundCloud" onclick = "unsubConfirm('soundcloud')" hidden>Unsubscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = 'flex-container'>
+            <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id ="twitch-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/twitch.png" alt="twitch">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Twitch</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonTwitch" onclick="subscribeOnClick('twitch')" id ="subscribe-btn-Twitch">Subscribe</button>
+                        <div id="myDropdownTwitch" class="dropdown-content6">
+                            <text id = "twitch14"  onclick = "dropdownTwitch('$14/month')">$14/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonTwitch" onclick = "unsubConfirm('twitch')" hidden>Unsubscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "youtube-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/youtube.webp" alt="youtube">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">YouTube</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonYoutube" onclick="subscribeOnClick('youtube')" id ="subscribe-btn-Youtube">Edit Plan</button>
+                        <div id="myDropdownYoutube" class="dropdown-content7">
+                            <text id = "youtube8"  onclick = "dropdownYoutube('$8/month')">$8/month</text>
+                            <text id = "youtube14" onclick = "dropdownYoutube('$14/month')">$14/month</text>
+                            <text id = "youtube23" onclick = "dropdownYoutube('$23/month')">$23/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonYoutube" onclick = "unsubConfirm('youtube')" >Unsubscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;" border-width = "thick">
+                <div class="card-header" id = "kick-header">
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/kick.png" alt="kick">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Kick</h5>
+                    <hr class = 'horizontal_line'>
+                    <div class = "dropdown">
+                        <button class="subscribeButtonKick" onclick="subscribeOnClick('kick')" id ="subscribe-btn-Kick">Subscribe</button>
+                        <div id="myDropdownKick" class="dropdown-content8">
+                            <text id = "kick5"  onclick = "dropdownKick('$5/month')">$5/month</text>
+                            <text id = "kick10" onclick = "dropdownKick('$10/month')">$10/month</text>
+                        </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButtonKick" onclick = "unsubConfirm('kick')" hidden>Unsubscribe</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/subscriptions.js"></script>
+    </body>
+</html>
